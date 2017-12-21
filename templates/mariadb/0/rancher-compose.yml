@@ -3,10 +3,10 @@ catalog:
   name: "MariaDB"
   version: "0.0.1-rancher1"
   description: "A Docker Container For MariaDB Installation"
+  uuid: MariaDB-0
   questions: 
     - variable: "MYSQL_ROOT_PASSWORD"
       label: "MySQL Root Password"
-      description: | 
-          Input A Strong Root Password To Be Used
+      description: "Input A Strong Root Password To Be Used"
       required: true
-      type: password
+      type: "password"
