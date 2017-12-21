@@ -1,0 +1,9 @@
+---
+name: MariaDB
+description: >
+  A Docker Container For MariaDB Installation
+version: 0.0.1-rancher1
+category: Database
+maintainer: Alex Penketh <admin@apenketh.com>
+license: Apache2
+projectURL: https://github.com/APenketh/rancher-cattle-catalog
