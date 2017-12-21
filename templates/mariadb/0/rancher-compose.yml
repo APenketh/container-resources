@@ -1,12 +1,15 @@
-version: '1'
+version: '2'
 catalog:
   name: "MariaDB"
   version: "0.0.1-rancher1"
-  description: "A Docker Container For MariaDB Installation"
+  description: |
+      A Docker Container For MariaDB Installation
+
+      Uses the offical MariaDB container managed by the following: https://hub.docker.com/_/mariadb/
+  uuid: MariaDB-0
   questions: 
     - variable: "MYSQL_ROOT_PASSWORD"
       label: "MySQL Root Password"
-      description: | 
-          Input A Strong Root Password To Be Used
+      description: "Input A Strong Root Password To Be Used"
       required: true
-      type: password
+      type: "password"
