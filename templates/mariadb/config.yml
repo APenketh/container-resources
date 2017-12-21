@@ -1,6 +1,6 @@
 ---
 name: MariaDB
-description: >
+description: |
   A Docker Container For MariaDB Installation
 version: 0.0.1-rancher1
 category: Database
