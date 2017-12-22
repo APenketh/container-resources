@@ -1,0 +1,13 @@
+version: '2'
+services:
+  caddy:
+    image: abiosoft/caddy
+    volumes:
+      - 'caddy_data:/webserver'
+    ports:
+      - ${http_port}:${http_port}
+      - ${https_port}:${https_port}
+
+volumes:
+  caddy_data: 
+    driver: ${volume_driver}

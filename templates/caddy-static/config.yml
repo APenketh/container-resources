@@ -1,0 +1,9 @@
+---
+name: Caddy-Static-Site
+description: |
+  A stack for launching Caddy webserver intended to host a static site.
+version: 0.0.1-rancher1
+category: webserver
+maintainer: Alex Penketh
+license: Apache2
+projectURL: https://github.com/APenketh/rancher-cattle-catalog
