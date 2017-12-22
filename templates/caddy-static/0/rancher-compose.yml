@@ -3,7 +3,7 @@ catalog:
   name: "Caddy-Static-Site"
   version: "v0.0.1-rancher"
   description: "Launch Caddy For Hosting Static Sites"
-  uuid: caddy-static
+  uuid: caddy-static-site
   minimum_rancher_version: v0.51.0
   questions:
     - variable: http_port

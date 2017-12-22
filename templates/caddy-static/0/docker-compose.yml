@@ -3,7 +3,7 @@ services:
   caddy:
     image: abiosoft/caddy
     volumes:
-      - 'caddy_data:/webserver'
+      - 'caddy_data:/etc/Caddyfile'
     ports:
       - ${http_port}:${http_port}
       - ${https_port}:${https_port}
