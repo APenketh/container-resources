@@ -1,0 +1,34 @@
+version: '2'
+services:
+  mariadb:
+    image: mariadb
+    volumes:
+      - 'mariadb_data:/dbdata'
+    environment:
+      - MYSQL_ROOT_PASSWORD: ${mariadb_root_password}
+      - MARIADB_USER: ${mariadb_user}
+      - MARIADB_PASSWORD: ${mariadb_user_password}
+      - MARIADB_DATABASE: ${mariadb_database_name}
+
+  wordpress:
+    image: 'wordpress:fpm'
+    volumes:
+      - 'wordpress_data:/wordpress'
+    depends_on:
+      - mariadb
+
+  webserver:
+    image: abiosoft/caddy
+    volumes:
+      - 'webserver_data:/webserver'
+    ports:
+      - ${http_port}:${http_port}
+      - ${https_port}:${https_port}
+
+volumes:
+  mariadb_data:
+    driver: ${volume_driver}
+  wordpress_data:
+    driver: ${volume_driver}
+  webserver_data: 
+    driver: ${volume_driver}

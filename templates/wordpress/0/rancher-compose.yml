@@ -1,0 +1,55 @@
+version: '2'
+catalog:
+  name: "WordPress"
+  version: "v0.0.1-rancher"
+  description: "Blog tool, publishing platform and CMS based on bitnami images"
+  uuid: WordPress-1
+  minimum_rancher_version: v0.51.0
+  questions:
+    - variable: http_port
+      description: "public port to access the WordPress site"
+      label: "HTTP Public Port"
+      required: true
+      default: "80"
+      type: "int"
+    - variable: https_port
+      description: "public port to access the WordPress site"
+      label: "HTTPS Public Port"
+      required: true
+      default: "443"
+      type: "int"
+    - variable: mariadb_root_password
+      description: "MariaDB root password, set on first run"
+      label: "MariaDB Root Password"
+      required: true
+      default: "mariadb_my_root"
+      type: "string"
+    - variable: mariadb_user
+      description: "MariaDB database user, created on first run"
+      label: "MariaDB Database User"
+      required: true
+      default: "wordpress_user"
+      type: "string"
+    - variable: mariadb_user_password
+      description: "MariaDB database user password, set on first run"
+      label: "MariaDB Database User Password"
+      required: true
+      default: "wordpress_password"
+      type: "string"
+    - variable: mariadb_database_name
+      description: "WordPress database name"
+      label: "WordPress database name"
+      required: true
+      default: "bitnami_wordpress"
+      type: "string"
+    - variable: volume_driver
+      description: "Volume driver to use with this service"
+      label: "Volume driver"
+      required: true
+      default: "local"
+      type: enum
+      options:
+        - local
+        - rancher-nfs
+        - rancher-efs
+        - rancher-ebs
