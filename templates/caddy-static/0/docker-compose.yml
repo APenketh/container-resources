@@ -9,7 +9,8 @@ services:
     ports:
       - ${http_port}:${http_port}
       - ${https_port}:${https_port}
-    command: ["/bin/caddy", "--conf", "/etc/caddy/Caddyfile"]
+    entrypoint: ["/usr/bin/caddy"]
+    command: ["--conf", "/etc/caddy/Caddyfile"]
 
 volumes:
   caddyfile: 
