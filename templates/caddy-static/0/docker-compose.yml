@@ -9,7 +9,7 @@ services:
     ports:
       - ${http_port}:${http_port}
       - ${https_port}:${https_port}
-    command: /bin/sh, -c, "echo http://0.0.0.0 > /etc/caddy/Caddyfile && caddy --conf /etc/caddy/Caddyfile"
+    command: /bin/sh -c "echo http://0.0.0.0 > /etc/caddy/Caddyfile && caddy --conf /etc/caddy/Caddyfile"
 
 volumes:
   caddyfile: 
