@@ -3,11 +3,18 @@ services:
   caddy:
     image: abiosoft/caddy
     volumes:
-      - 'caddy_data:/etc/caddy/'
+      - 'caddyfile:/etc/caddy'
+      - 'doc_root:/srv'
+      - 'ssl_certs:/root/.caddy'
     ports:
       - ${http_port}:${http_port}
       - ${https_port}:${https_port}
+    command: "caddy -conf /etc/caddy/Caddyfile && caddy -log stdout"
 
 volumes:
-  caddy_data: 
+  caddyfile: 
+    driver: ${volume_driver}
+  doc_root: 
+    driver: ${volume_driver}
+  ssl_certs: 
     driver: ${volume_driver}
