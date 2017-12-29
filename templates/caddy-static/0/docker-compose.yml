@@ -1,7 +1,7 @@
 version: '2'
 services:
   caddy:
-    image: abiosoft/caddy
+    image: apenketh/caddy
     volumes:
       - 'caddyfile:/etc/caddy'
       - 'doc_root:/srv'
@@ -9,7 +9,6 @@ services:
     ports:
       - ${http_port}:${http_port}
       - ${https_port}:${https_port}
-    command: /bin/sh -c "echo http://0.0.0.0 > /etc/caddy/Caddyfile && caddy --conf /etc/caddy/Caddyfile"
 
 volumes:
   caddyfile: 
